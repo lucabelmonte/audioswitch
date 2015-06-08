@@ -1,0 +1,169 @@
+2.0 RC4
+All audio devices related events are now shown in icon state.
+Should have less crashes because of adding or removing devices.
+Tracked down a few memory leaks.
+---------------------
+
+2.0 RC3
+AudioSwitch is now installed under user's local AppData folder with the settings file.
+Right-click on the icon now shows the menu for settings and exit.
+Possibly fixed the device hiding.
+Command-line now always exits and never runs GUI since it makes most sense to keep them separate (no -x option anymore).
+Added scrollbar for device list in settings.
+Mouse scroll could be working a bit better now.
+When last settings tab is visible then it's possible to drag the OSD window around the screen and the position is saved.
+---------------------
+
+1.42
+added support for .ico files as device icons.
+---------------------
+
+1.41
+Fixed a bug where the menu wouldn't pop up in some cases.
+Optimized menu appearance smoothness.
+---------------------
+
+1.40
+Added support for higher DPI (125% mode).
+Changed behavior to be more like Windows' own popups (power manager, calendar etc).
+Removed app config from resources - now AudioSwitch.exe.config must exist in same folder by default.
+---------------------
+
+1.39
+Add double-buffering to listview - removes flickering on mouseover.
+Add option IgnoreErrors which ignores the API error when setting to default a device which has more than 64 characters in it's name: must be set manually to True in config ...
+---------------------
+
+1.38
+some additional code to detect if icon is hidden or not.
+---------------------
+
+1.37
+Hopefully fixed the positioning issues :)
+---------------------
+
+1.36
+Increased hot key keypress time to 5 seconds.
+Removed some unnecessary code, including old-style LED's.
+Optimized some calls to Windows' interfaces.
+---------------------
+
+1.34
+Changed LED design to be more modern - it's possible to switch between old nad new style with double-click on the bars. This choice is remembered in user settings.
+---------------------
+
+1.32
+reduced flickering on startup, made LED's higher by 1px :)
+---------------------
+
+1.31
+fixed a bug where device name length was still too long to snow in tray icon tip.
+Separated code to clean up and be more readable.
+Some new tweaks for optimal API/interface calls.
+Added command-line options for setting hot keys, setting default device and getting device list to console.
+Added silent (stfu) option to command line, when set then GUI is disabled and no notifications are shown (changing or removing hot key).
+Changed compilation architecture to AnyCPU.
+---------------------
+
+1.30
+fixed issue 3 and issue 4.
+Also fixed a small bug with hot key setting on startup.
+Optimized LED animation to make 75% less API calls making animation much smoother and precise.
+---------------------
+
+1.29
+hopefully fixed issue 1 - must be verified.
+Also added additional check on hotkey setting so at least one modifier key must be used in the combination.
+---------------------
+
+1.28
+New hot key system - while menu is open, hold desired key combination down for 3 seconds and you'll get a confirmation that the combination is set. It only works
+when menu is hidden. To delete the last hot key just hold down delete button while AudioSwitch is visible - you'll get a confirmation dialog saying it's deleted. Hot key is also saved with the change to user AppData folder's config file and loaded on every startup and confirmed by the same popup balloon. When there is no hot key the message won't appear.
+---------------------
+
+1.27
+compacted resources for smaller size.
+Added smarter logic for scrolling with some mouses.
+One additional check for the window position.
+---------------------
+
+1.26
+small bug got through :)
+---------------------
+
+1.25
+Added overlay icon to default device for easier recognition from the list.
+Added scroll volume control - when list is visible then mouse scroll changes volume of the current device.
+---------------------
+
+1.24
+updated LED logic to be simpler
+---------------------
+
+1.23
+minor adjustments only...
+---------------------
+
+1.21
+some cleanup and rearrangement of the code.
+Moved LED bars to separate control, made it easier to handle and/or reposition them.
+Removed unmute when moving volume slider while muted - allows to pre-set the volume before unmute.
+---------------------
+
+1.20
+New slider thumb which is more visible now.
+---------------------
+
+1.19
+Yeey finally nice-looking icons! :)
+---------------------
+
+1.18
+forgot versioning, also some small tweaks as usual...
+---------------------
+
+1.17
+Added quick-mute function with Alt hot-key, dimmed icons a bit, small other mods.
+Removed useless and troublesome tray icon tooltip/hint, which caused some ineffective CPU usage and wasn't really worth it anyway.
+---------------------
+
+1.15
+finally fixed a stupid bug where volume trackbar was tied to several audio devices.
+Also added version number, trying to keep minor version tied according to SVN releases, major for big difference changes. Should now be OK!
+---------------------
+
+1.14
+New try to fix some issues mapping the volume slider with different types of audio devices.
+Also new and correct icons for all devices!
+---------------------
+
+1.12
+Added recording device functionality - Ctrl-click/Ctrl-right-click/mouseover now shows recording devices or switches between them the same way as output devices. All logic is the same otherwise, but shift-click now closes the app instead.
+---------------------
+
+1.10
+added mute function - right-click to volume slider(also it's background area) toggles mute.
+Refreshing icon when started.
+Changed LED moving so no single LED stays on when silent.
+---------------------
+
+1.09
+remove unnecessary sizes from icon. Better tray icon logic.
+---------------------
+
+1.08
+some smaller optimizations with LED meter
+---------------------
+
+1.04
+added whole CoreAudioApi library to source, redesigned volume slider as custommtrackbar with LED bars.
+Removed exit button - now Control + any-mouse-click on icon exits the app.
+Also changed main icon of app.
+Changed tray icon and made it change according to volume level.
+Basically - major overhaul, get it and check it out :)
+---------------------
+
+1.03
+Added missing project file.
+Fixed a bug where pop-up window was drawn partly outside of the window area.
+---------------------
